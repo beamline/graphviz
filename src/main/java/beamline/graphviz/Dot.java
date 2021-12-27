@@ -1,6 +1,9 @@
 package beamline.graphviz;
 
 import org.apache.commons.io.IOUtils;
+
+import beamline.graphviz.exporter.GraphExporter;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -49,6 +52,10 @@ public class Dot extends DotCluster {
 
 	public Dot(InputStream input) throws IOException {
 		this.stringValue = IOUtils.toString(input, "UTF-8");
+	}
+	
+	public void exportToSvg(File file) throws IOException {
+		GraphExporter.exportSVG(this, file);
 	}
 
 	public void exportToFile(File file) throws IOException {
