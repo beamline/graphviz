@@ -5,6 +5,7 @@ import java.util.Map.Entry;
 
 public class DotEdge extends AbstractDotElement {
 
+	private static final long serialVersionUID = -608384231308867179L;
 	private DotNode source;
 	private DotNode target;
 

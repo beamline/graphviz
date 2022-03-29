@@ -13,6 +13,8 @@ import java.util.Map.Entry;
  */
 public class DotNode extends AbstractDotElement {
 
+	private static final long serialVersionUID = 7718543258727675772L;
+
 	protected DotNode(String label, Map<String, String> optionsMap) {
 		this.setLabel(label);
 		if (optionsMap != null) {

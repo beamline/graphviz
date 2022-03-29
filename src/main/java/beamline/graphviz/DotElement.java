@@ -1,5 +1,6 @@
 package beamline.graphviz;
 
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Set;
  * @see {@link http://leemans.ch/}
  * @see {@link https://svn.win.tue.nl/repos/prom/Packages/GraphViz/Trunk/src/org/processmining/plugins/graphviz/dot/}
  */
-public interface DotElement {
+public interface DotElement extends Serializable {
 
 	public String getLabel();
 

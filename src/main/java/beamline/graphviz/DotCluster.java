@@ -1,6 +1,5 @@
 package beamline.graphviz;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -19,22 +18,23 @@ import java.util.Set;
  */
 public class DotCluster extends DotNode {
 
-	private final List<DotNode> nodes;
-	private final List<DotEdge> edges;
-	private final List<DotCluster> clusters;
+	private static final long serialVersionUID = -3031532787250941544L;
+	private final LinkedList<DotNode> nodes;
+	private final LinkedList<DotEdge> edges;
+	private final LinkedList<DotCluster> clusters;
 
-	private final Map<String, String> graphOptionMap;
-	private final Map<String, String> nodeOptionMap;
-	private final Map<String, String> edgeOptionMap;
+	private final HashMap<String, String> graphOptionMap;
+	private final HashMap<String, String> nodeOptionMap;
+	private final HashMap<String, String> edgeOptionMap;
 
 	protected DotCluster() {
 		super("", null);
-		nodes = new ArrayList<DotNode>();
-		edges = new ArrayList<DotEdge>();
-		clusters = new ArrayList<DotCluster>();
-		graphOptionMap = new HashMap<String, String>();
-		nodeOptionMap = new HashMap<String, String>();
-		edgeOptionMap = new HashMap<String, String>();
+		nodes = new LinkedList<>();
+		edges = new LinkedList<>();
+		clusters = new LinkedList<>();
+		graphOptionMap = new HashMap<>();
+		nodeOptionMap = new HashMap<>();
+		edgeOptionMap = new HashMap<>();
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class DotCluster extends DotNode {
 	 *         sub-graphs.
 	 */
 	public List<DotNode> getNodesRecursive() {
-		List<DotNode> result = new LinkedList<DotNode>();
+		List<DotNode> result = new LinkedList<>();
 		result.addAll(nodes);
 		result.addAll(clusters);
 

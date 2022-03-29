@@ -2,7 +2,6 @@ package beamline.graphviz;
 
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -16,11 +15,13 @@ import java.util.UUID;
  * @see {@link https://svn.win.tue.nl/repos/prom/Packages/GraphViz/Trunk/src/org/processmining/plugins/graphviz/dot/}
  */
 public abstract class AbstractDotElement implements DotElement {
+
+	private static final long serialVersionUID = -2029055045617878563L;
 	private final String id;
-	private Map<String, String> optionsMap;
+	private HashMap<String, String> optionsMap;
 	private String label;
 
-	public AbstractDotElement() {
+	protected AbstractDotElement() {
 		id = "e" + UUID.randomUUID().toString();
 		label = "";
 		optionsMap = new HashMap<>();
